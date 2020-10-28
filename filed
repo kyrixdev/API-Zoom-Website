@@ -1,0 +1,54 @@
+            echo $topic."<br/>";
+            echo $meeting->start_time."<br/>";
+            echo $meeting->agenda." Minute <br/>";
+
+
+
+        echo "
+        <tbody class='bg-white divide-y divide-gray-200'>
+            <tr>
+              <td class='px-4 py-2 whitespace-no-wrap'>
+                <div class='flex items-center'>
+                  <div class='ml-4'>
+                    <div class='text-sm leading-5 font-medium text-gray-900'>;
+                     ";echo $topic.'<br/>';
+                    echo "
+                    </div>
+                    <div class='text-sm leading-5 text-gray-500'>
+                    "; echo $id.'<br/>';
+                    echo "
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class='px-4 py-2 whitespace-no-wrap'>
+                <div class='text-sm leading-5 text-gray-900'>
+                    ";echo $meeting->start_time;
+                    echo"
+                </div>
+                <div class='text-sm leading-5 text-gray-500'>
+                    ";echo $meeting->duration.' Minute <br/>';
+                    echo "
+                </div>
+              </td>
+              <td class='px-4 py-2 whitespace-no-wrap'>
+                <span class='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
+                  Active
+                </span>
+              </td>
+              <td class='px-4 py-2 whitespace-no-wrap text-sm leading-5 text-gray-500'>
+              '; echo $meeting->agenda;
+              echo "
+              </td>
+              <td class='px-2 py-2 whitespace-no-wrap text-left text-sm leading-5 font-medium'>
+                <a href=' "; echo $join;";echo"' class='text-green-600 hover:text-green-900 pr-6'>Start</a>
+                <a href='' class='text-indigo-600 hover:text-indigo-900'>Edit</a>
+              </td>
+            </tr>
+
+                </tbody>
+                </table>
+                </div>
+                </div>
+                    </div>
+            </div> ";
