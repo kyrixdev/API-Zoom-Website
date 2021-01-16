@@ -1,9 +1,9 @@
 <?php
 class DB {
     // Database credentials
-    private $dbHost     = "127.0.0.1";
+    private $dbHost     = "localhost";
     private $dbUsername = "root";
-    private $dbPassword = "";
+    private $dbPassword = "Kefikefi12";
     private $dbName     = "test";
  
     public function __construct(){
