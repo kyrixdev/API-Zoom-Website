@@ -18,13 +18,13 @@ function get_meetings() {
             ]
         ]);
         echo "
-        <div class='container mt-20 flex flex-wrap overflow-hidden'>
+        <div class='flex flex-wrap overflow-hidden'>
         ";
         $data = json_decode($response->getBody());
         $id = $data->meetings[0]->id;
         $topic = $data->meetings[0]->topic;
         $join = $data->meetings[0]->join_url;
-        $password = $data->meetings[0]->password;
+
         $status = $data->action;
         foreach($data->meetings as $meeting) {
 
@@ -32,23 +32,27 @@ function get_meetings() {
           
 
               <div class='w-1/2 overflow-hidden lg:w-1/4 xl:my-2 xl:px-2 xl:w-1/4'>
-                <div class='card bg-white m-2 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
+                <div class='card m-2 cursor-pointer border border-gray-400 rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200'>
                   <div class='m-3'>
-                    <h2 class='text-lg'>$meeting->topic </h2>
-                    <p class='text-sm font-bold text-gray-700 hover:text-gray-900 transition-all duration-200'>
+                    <h2 class='text-lg'>$meeting->topic 
+                      <span class='text-sm text-teal-800 font-mono bg-teal-100 inline rounded-full px-2 align-top float-right animate-pulse'>$meeting->id</span>
+                    </h2>
+                    <p class='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
                       Class: $meeting->agenda
                     </p>
-                    <p class='text-sm font-bold text-gray-700 hover:text-gray-900 transition-all duration-200'>
-                    Duration: $meeting->duration Minute
+                    <p class='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
+                    Duration: $meeting->duration
                     </p>
-                    <p class='text-sm font-bold text-gray-700 hover:text-gray-900 transition-all duration-200'>
-                    Temp de debut: x
+                    <p class='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
+                    Mot de pass: 123456
                     </p>
-                    <p class='text-sm font-bold text-gray-700 hover:text-gray-900 transition-all duration-200'>
-                    Mot de pass : 123456
+                    <p class='font-light font-mono text-sm text-gray-700 hover:text-gray-900 transition-all duration-200'>
+                    Duration: $meeting->start_time
                     </p>
                     <div class='text-center mt-5'>
-                      <a href='$meeting->join_url' class='text-green-600 text-center bg-green-200 rounded-full hover:text-green-900 px-2 mr-6'>Joindre</a>
+                      <a href='$meeting->join_url' class='text-green-600 text-center bg-green-200 rounded-full hover:text-green-900 px-2 mr-6'>Lancer</a>
+                      <a href='' class='text-indigo-600 bg-indigo-200 rounded-full hover:text-indigo-900 px-2 mr-6'>Éditer</a>
+                      <a href='delete-meeting.php?meetingid=$meeting->id' class='text-red-600 bg-red-200 rounded-full hover:text-red-900 px-2 mr-6'>Annuler</a>
                     </div>
                   </div>
               </div>

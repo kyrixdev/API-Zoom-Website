@@ -1,10 +1,13 @@
+<?php
+require_once 'config.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>
         <?php 
             $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-            if ( strpos($url, 'index.php') !== false ) {
+            if ( strpos($url, 'user.php') !== false ) {
                 echo('Zoom Meetings | Zoom Node');
             }
         ?>
@@ -19,21 +22,15 @@
 
 <!-- LINKS -->
 <link href="public/styles.css" rel="stylesheet" type="text/css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/d70f8cdd06.js" crossorigin="anonymous"></script>
 
 <!-- JS, Popper.js, and jQuery -->
 <script>
-
 </script>
 </head>
-<body class="bg-gray-800">
-  <header class="bg-white shadow m-5 bg-gray-800">
-    <img src="https://prof-de-net.online/img/logos/default-monochrome.svg" class="w-1/5 float-left">
-    <button class="btn btn--primary bg-green-500 text-white float-right p-2 rounded-lg">Reture au site</button>
-  </header>
-  <h1 class="text-3xl font-bold leading-tight text-center text-white">
-          Les Class Onlines
-  </h1>         
+<body>
+<main class="container mx-auto";
 
+</body>
+</html>

@@ -2,7 +2,7 @@
 require_once 'config.php';
 require_once 'index.php';
 function create_meeting() {
-    $client = new GuzzleHttp\Client(['base_uri' => 'https://api.zoom.us']);
+    $client = new GuzzleHttp\Client(['base_uri' => 'https://api.zoom.us/v2']);
  
     $db = new DB();
     $arr_token = $db->get_access_token();
@@ -10,7 +10,7 @@ function create_meeting() {
  
     try {
         // if you have userid of user than change it with me in url
-        $response = $client->request('POST', '/v2/users/me/meetings', [
+        $response = $client->request('POST', '/users/me/meetings', [
             "headers" => [
                 "Authorization" => "Bearer $accessToken"
             ],
@@ -18,7 +18,8 @@ function create_meeting() {
                 "topic" => $_GET['mname'],
                 "type" => 2,
                 "agenda" => $_GET['mdes'],                              
-                "start_time" => $_GET['mdate']." ".$_GET['mhour'].":00",    // meeting start time
+                "start_time" => $_GET['mdate'].$_GET['mhour'],
+                "timezone" =>  "Africa/Tunis",    // meeting start time
                 "duration" => $_GET['mtime'],                       // 30 minutes
                 "password" => "123456"                   // meeting password
             ],
