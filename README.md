@@ -1,2 +1,2 @@
 # API-Zoom-Website
-A platform to deploy , delete, start, edit your zoom meetings just from your website
+A platform to deploy , or manage your meetings just from your website using Zoom API
